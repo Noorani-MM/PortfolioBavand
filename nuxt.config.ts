@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+
   runtimeConfig: {
     public: {
       APP_NAME: process.env.APP_NAME,
@@ -11,10 +12,23 @@ export default defineNuxtConfig({
       APP_ENV: process.env.APP_ENV ?? 'debug',
     }
   },
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
+  modules: ["@nuxtjs/google-fonts"],
+  googleFonts: {
+    families: {
+      Roboto: true,
+      'Uchen': {
+        display: "swap",
+        wght: '200..900',
+        ital: '200..700',
+      }
+    }
+  }
 })
